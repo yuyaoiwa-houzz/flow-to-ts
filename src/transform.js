@@ -9,7 +9,7 @@ const locToString = loc =>
 const stripSuffixFromImportSource = path => {
   // TODO: make this configurable so we can output .ts[x]?
   const src = /\.\.?\//.test(path.node.source.value)
-    ? path.node.source.value.replace(/\.js[x]?$/, "")
+    ? path.node.source.value.replace(/\.js?$/, "")
     : path.node.source.value;
   path.node.source = t.stringLiteral(src);
 };
